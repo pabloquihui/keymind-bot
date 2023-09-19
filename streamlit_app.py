@@ -21,7 +21,7 @@ def load_data():
         # reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         # docs = reader.load_data()
         # service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on the Streamlit Python library and your job is to answer technical questions. Assume that all questions are related to the Streamlit Python library. Keep your answers technical and based on facts – do not hallucinate features."))
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on Contexto Legal website services named Contexbot and your job is to answer questions about the service. Assume that all questions are related to Contexto services. Keep your answers technical and based on facts – do not hallucinate features. Always answer in spanish."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Eres un asistente virtual llamado LegalBot. Tu eres un experto en los servicios de Contexto Legal y tu trabajo es responder preguntas acerca de los servicios. No alucines caracteristicas y siempre responde en español.")) #You are an expert on Contexto Legal website services named Contexbot and your job is to answer questions about the service. Assume that all questions are related to Contexto services. Keep your answers technical and based on facts – do not hallucinate features. Always answer in spanish."))
         # index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         
         
