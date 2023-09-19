@@ -7,8 +7,8 @@ from llama_index import GPTVectorStoreIndex, download_loader
 
 st.set_page_config(page_title="LegalBot, el asistente virtual de Contexto", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("LegalBot, el asistente virtual de Contexto Legal, estoy para ayudarte! 💬")
-st.info("Revisa toda la información de Contexto en nuestra [página web](https://www.contextolegal.mx)", icon="📃")
+# st.title("LegalBot, el asistente virtual de Contexto Legal, estoy para ayudarte! 💬")
+# st.info("Revisa toda la información de Contexto en nuestra [página web](https://www.contextolegal.mx)", icon="📃")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
@@ -40,7 +40,7 @@ index = load_data()
 # chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True, system_prompt="You are an expert on the Streamlit Python library and your job is to answer technical questions. Assume that all questions are related to the Streamlit Python library. Keep your answers technical and based on facts – do not hallucinate features.")
 chat_engine = index.as_chat_engine(chat_mode="react", verbose=True)
 
-if prompt := st.chat_input("Your question"): # Prompt for user input and save to chat history
+if prompt := st.chat_input("Pregúntame algo"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages: # Display the prior chat messages
