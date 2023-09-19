@@ -25,7 +25,7 @@ def load_data():
         # index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         
         
-        SimpleWebPageReader = download_loader("SimpleWebPageReader")
+        SimpleWebPageReader = download_loader("SimpleWebPageReader", custom_path="local_dir")
 
         loader = SimpleWebPageReader()
         documents = loader.load_data(urls=['https://www.contextolegal.mx/', 'https://www.contextolegal.mx/faq'])
