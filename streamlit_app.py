@@ -37,8 +37,12 @@ def load_data():
 
 
 index = load_data()
+
+from llama_index.memory import ChatMemoryBuffer
+
+memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
 # chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True, system_prompt="You are an expert on the Streamlit Python library and your job is to answer technical questions. Assume that all questions are related to the Streamlit Python library. Keep your answers technical and based on facts – do not hallucinate features.")
-chat_engine = index.as_chat_engine(chat_mode="openai", verbose=True)
+chat_engine = index.as_chat_engine(chat_mode="context", memory=memory, verbose=True)
 
 if prompt := st.chat_input("Pregúntame algo"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
