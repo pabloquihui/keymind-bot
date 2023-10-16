@@ -3,4 +3,4 @@ openai
 llama-index
 nltk
 html2text
-pypdf
+pypdf==3.13.0
